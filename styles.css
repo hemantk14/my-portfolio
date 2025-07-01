@@ -1258,3 +1258,19 @@ section {
         padding: 2rem 1.5rem;
     }
 }
+
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.breathing {
+    animation: breathing 2.5s ease-in-out infinite;
+}
+
