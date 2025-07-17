@@ -24,8 +24,8 @@ body {
 
 /* Color Variables */
 :root {
-    --primary-color: #4A90E2;
-    --secondary-color: #7FB3D3;
+    --primary-color: orange;
+    --secondary-color: #ffc966;
     --accent-color: #F5A623;
     --text-dark: #2C3E50;
     --text-light: #7F8C8D;
@@ -33,7 +33,7 @@ body {
     --bg-white: #FFFFFF;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
-    --gradient: linear-gradient(135deg, #4A90E2 0%, #7FB3D3 100%);
+    --gradient: linear-gradient(135deg, orange 0%, #ffc966 100%);
 }
 
 /* Navigation */
@@ -476,6 +476,30 @@ section {
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
+}
+
+.nav-logo a,
+.nav-link:hover,
+.nav-link.active,
+.btn-primary,
+.service-icon,
+.section-line,
+.stat h3,
+.contact-icon,
+.social-icon {
+    animation: pulse-orange 2s infinite;
+}
+
+@keyframes pulse-orange {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 165, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+    }
 }
 
 .stat p {
