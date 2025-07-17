@@ -128,7 +128,10 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    background: orange;
+    background-image: url('hemant-photo.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 
