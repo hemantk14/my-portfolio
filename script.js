@@ -352,67 +352,31 @@ function initParallaxEffects() {
     const parallaxMid = document.querySelector('.parallax-mid');
     const parallaxFront = document.querySelector('.parallax-front');
     const heroShapes = document.querySelectorAll('.shape');
-    const serviceCards = document.querySelectorAll('.service-card');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
     
     function updateParallax() {
         const scrollTop = window.pageYOffset;
-        const windowHeight = window.innerHeight;
         
         // Parallax layers with different speeds
         if (parallaxBack) {
-            const backSpeed = scrollTop * 0.2;
+            const backSpeed = scrollTop * 0.3;
             parallaxBack.style.transform = `translateY(${backSpeed}px)`;
         }
         
         if (parallaxMid) {
-            const midSpeed = scrollTop * 0.4;
+            const midSpeed = scrollTop * 0.5;
             parallaxMid.style.transform = `translateY(${midSpeed}px)`;
         }
         
         if (parallaxFront) {
-            const frontSpeed = scrollTop * 0.6;
+            const frontSpeed = scrollTop * 0.7;
             parallaxFront.style.transform = `translateY(${frontSpeed}px)`;
         }
         
         // Individual hero shapes parallax
         heroShapes.forEach((shape, index) => {
-            const speed = 0.3 + (index * 0.1);
+            const speed = 0.4 + (index * 0.1);
             const yPos = -(scrollTop * speed);
             shape.style.transform = `translateY(${yPos}px)`;
-        });
-        
-        // Service cards parallax on scroll
-        serviceCards.forEach((card, index) => {
-            const rect = card.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (progress - 0.5) * 20;
-                card.style.transform = `translateY(${translateY}px)`;
-            }
-        });
-        
-        // Portfolio items subtle parallax
-        portfolioItems.forEach((item, index) => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = (progress - 0.5) * 15;
-                const rotateY = (progress - 0.5) * 5;
-                item.style.transform = `translateY(${translateY}px) rotateY(${rotateY}deg)`;
-            }
-        });
-        
-        // Testimonial cards wave effect
-        testimonialCards.forEach((card, index) => {
-            const rect = card.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-                const translateY = Math.sin(progress * Math.PI + (index * 0.5)) * 10;
-                const scale = 0.95 + (Math.sin(progress * Math.PI) * 0.05);
-                card.style.transform = `translateY(${translateY}px) scale(${scale})`;
-            }
         });
     }
     
@@ -421,18 +385,16 @@ function initParallaxEffects() {
         const hero = document.querySelector('.hero');
         if (!hero) return;
         
-        const rect = hero.getBoundingClientRect();
-        if (rect.top <= 0 && rect.bottom >= 0) {
-            const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-            const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+        const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
             
-            heroShapes.forEach((shape, index) => {
-                const speed = 0.5 + (index * 0.1);
-                const x = mouseX * speed * 10;
-                const y = mouseY * speed * 10;
-                shape.style.transform += ` translate(${x}px, ${y}px)`;
-            });
-        }
+        const parallaxLayers = document.querySelectorAll('.parallax-layer');
+        parallaxLayers.forEach((layer, index) => {
+            const speed = (index + 1) * 5;
+            const x = mouseX * speed;
+            const y = mouseY * speed;
+            layer.style.transform = `translate(${x}px, ${y}px)`;
+        });
     });
     
     // Throttled scroll event for parallax
