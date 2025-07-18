@@ -191,6 +191,7 @@ body {
 
 .animated-text {
     color: orange;
+    font-family: 'Courier New', Courier, monospace;
     font-style: italic;
     font-weight: bold;
     overflow: hidden;
@@ -199,8 +200,9 @@ body {
     margin: 0 auto;
     letter-spacing: .15em;
     animation:
-        typing 7s steps(40, end) infinite,
-        blink-caret .75s step-end infinite;
+        typing 7s steps(40, end),
+        blink-caret .75s step-end infinite,
+        pulse-orange 2s infinite 7s;
 }
 
 @keyframes typing {
