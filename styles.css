@@ -151,12 +151,12 @@ body {
 }
 
 .hero-text {
-    max-width: 1200px;
+    max-width: 600px;
     color: white;
 }
 
 .hero-text h1 {
-    font-size: 6rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     opacity: 0;
@@ -165,7 +165,7 @@ body {
 }
 
 .tagline {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
     opacity: 0;
@@ -175,6 +175,7 @@ body {
 
 .hero-description {
     font-size: 1rem;
+    font-weight: bold;
     margin-bottom: 2rem;
     opacity: 0;
     transform: translateY(30px);
@@ -192,14 +193,13 @@ body {
 .animated-text {
     color: orange;
     font-family: 'Courier New', Courier, monospace;
-    font-style: bold;
+    font-style: italic;
     font-weight: bold;
-    font-size: 3rem;
     border-right: .15em solid orange;
     margin: 0 auto;
     letter-spacing: .15em;
     animation:
-        typing 8s steps(40, end),
+        typing 7s steps(40, end),
         blink-caret .75s step-end,
         pulse-orange 2s infinite 7s;
 }
