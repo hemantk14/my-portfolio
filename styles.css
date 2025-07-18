@@ -151,7 +151,7 @@ body {
 }
 
 .hero-text {
-    max-width: 600px;
+    max-width: 800px;
     color: white;
 }
 
@@ -200,9 +200,9 @@ body {
     letter-spacing: .15em;
     font-size: 1.5rem;
     animation:
-        typing 7s steps(40, end),
+        typing 3.5s steps(40, end),
         blink-caret .75s step-end,
-        pulse-orange 2s infinite 7s;
+        pulse-orange 2s infinite 3.5s;
 }
 
 @keyframes typing {
